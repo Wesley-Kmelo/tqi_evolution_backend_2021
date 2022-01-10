@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+    <title>Login</title>
+    </head>
+    <h3>Digite o email e senha cadastrados abaixo</h3>
+        <body>
+        <form th:action="@{/loginadm}" object="${cliente}" method="post">
+            <div><label> Email : <input type="text" name="username"/> </label></div>
+            <div><label> Senha : <input type="password" name="password"/> </label></div>
+            <div><input type="submit" value="Conectar"/></div>
+        </form>
+
+            <div th:if="${param.error}">
+                <p>Usuário ou Senha inválidos.
+                <br>
+                <p><button type="button"><a href="/home"> Voltar ao Menu</a></button></p>
+            </div>
+            <div th:if="${param.logout}">
+               <p> Desconectado com Sucesso !!!.</p>
+                <br>
+                <p><button type="button"><a href="/home"> Voltar ao Menu</a></button></p>
+            </div>
+        </body>
+</html>

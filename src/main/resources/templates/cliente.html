@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://ultraq.net.nz/thymeleaf/layout">
+
+    <head>
+        <title>Cliente!</title>
+    </head>
+<body>
+    <table class="container">
+        <thead>
+        <tr>
+            <th align="left">Nome</th>
+            <th align="left">Email</th>
+            <th align="left">CPF</th>
+            <th align="left">RG</th>
+            <th align="left">Endereço</th>
+            <th align="left">Renda</th>
+        </tr>
+        </thead>
+    <tbody>
+        <h1>Seja bem vindo !!!</h1>
+        <h1>"${#authentication.getPrincipal().getUsername()}"</h1>
+
+
+        <tr th:each="cliente : ${listacliente}">
+
+            <td><a th:href="@{/cliente/{id}(id=${cliente.id_cliente})}"><span th:text="${cliente.nome}"></span></a></td>
+            <td><span th:text="${cliente.email}"></span></td>
+            <td><span th:text="${cliente.cpf}"></span></td>
+            <td><span th:text="${cliente.rg}"></span></td>
+            <td><span th:text="${cliente.endereco}"></span></td>
+            <td><span th:text="${cliente.renda}"></span></td>
+
+        </tr>
+    </tbody>
+    </table>
+</body>
+</html>

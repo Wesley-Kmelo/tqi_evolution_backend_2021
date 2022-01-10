@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <title>Cliente!</title>
+</head>
+    <h1>Bem vindo <span th:text="${usr}"></span></h1>
+
+    <body>
+        <h3>Dados pessoais</h3>
+        <table class="container" border="solid" >
+            <thead>
+                <tr>
+                    <th align="left">Nome</th>
+                    <th align="left">RG</th>
+                    <th align="left">CPF</th>
+                    <th align="left">Renda</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="cliente : ${porid}">
+                    <td><span th:text="${cliente.nome}"></span></td>
+                    <td><span th:text="${cliente.rg}"></span></td>
+                    <td><span th:text="${cliente.cpf}"></span></td>
+                    <td><span th:text="${cliente.renda}"></span></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+
+        <div>
+            <form method="post">
+                Valor de Empréstimo:  <input type="number" value="" name="vlremprestimo"/>
+                Data da primeira parcela: <input type="date" value="" name="data">
+                Quantidade de parcelas: <input type="number" value="" name="qtdparcelas">
+                <br>
+                <button type="submit">Cadastra Empréstimo</button>
+            </form>
+            <br>
+
+        </div>
+        <div>
+            <h3>Detalhes do Empréstimo</h3>
+            <div class="container" th:each="emprestimo : ${lstemprestimos}">
+                <div class="row">
+                    <table border="solid">
+                        <td>Valor do Empréstimo R$ <span th:text="${emprestimo.vlremprestimo}"></span></td>
+                        <td> Data da 1 parcela <span th:text="${emprestimo.data}"></span></td>
+                    </table>
+                </div>
+            <br>
+            </div>
+        </div>
+        <form th:action="@{/logout}" method="post" >
+            <input type="submit" value="Sair do Sistema..."/>
+        </form>
+    </body>
+</html>

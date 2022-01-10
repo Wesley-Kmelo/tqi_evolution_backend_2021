@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Cadastro Cliente</title>
+</head>
+<body>
+
+<h1>Cadastro de Cliente</h1>
+<p> Insira os dados abaixo e clique em CADASTRO !!!</p>
+<div class="container text-center" align="left" >
+    <form action="registra" object="${cliente}" method="post" >
+
+        NOME: <input type="text" value="" name="nome"/><br><br>
+        EMAIL: <input type="text" value="" name="email"/><br><br>
+        CPF: <input type="text" value="" name="cpf"/><br><br>
+        RG: <input type="text" value="" name="rg"/><br><br>
+        ENDEREÇO:<input type="text" value="" name="endereco"/><br><br>
+        RENDA:<input type="number" value="Valor da Renda" name="renda"/><br><br>
+        SENHA:<input type="text" value="" name="senha"/><br><br>
+
+       <p> <button type="submit">CADASTRO </button></p>
+    </form>
+
+</div>
+
+</body>
+</html>
