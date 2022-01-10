@@ -17,7 +17,7 @@ A intenção desse aplicativo é que o cliente acesse uma tela de login e tenha 
 Se não tiver cadastro então deverá criar um cadastro.
 O Acesso ao sistema será verificado por email e senha que foi criptografada.
 
-Eu não consegui implementar os testes unitários. 
+Ainda não implementei os testes unitários. 
 
 A validação dos campos de cadastro já está sendo aprimorada...
 
